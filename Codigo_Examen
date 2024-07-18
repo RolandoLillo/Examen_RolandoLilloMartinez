@@ -1,0 +1,72 @@
+
+import random
+
+listaTrabajadores = ["Juan Pérez","María García","Carlos López","Ana Martínez","Pedro Rodríguez","Laura Hernández","Miguel Sánchez","Isabel Gómez","Francisco Díaz","Elena Fernández"]
+
+sueldoAleatorio = []
+
+def sueldos():
+    
+    for trabajador in listaTrabajadores:
+        numeros = random.randint(300000,2500000)
+        sueldo = {
+            'trabajador' : trabajador,
+            'sueldo' : numeros,
+        }
+        sueldoAleatorio.append(sueldo)
+        print(sueldoAleatorio)
+
+def clasificacion():
+    clasificion1 = []
+    clasificion2 = []
+    clasificion3 = []
+    for contador in sueldoAleatorio:
+        if contador ['sueldos'] < 800000:
+            clasificion1.append(contador)
+        elif contador ['sueldos'] >= 800000 and contador ['sueldos'] <= 2000000:
+            clasificion2.append(contador)
+        elif contador ['sueldo'] > 2000000:
+            clasificion3.append(contador)
+    print("Sueldo menor a $800000 TOTAL: "+str(len(clasificion1)))
+    print("\nNombre Trabajador\t\tSueldo")
+    for numero in clasificion1:
+        print(f'{numero['Nombre']}\t\t{numero['Sueldo']}')
+
+
+
+
+
+
+
+
+
+
+def salir():
+    print("Finalizando programa... Desarrollado por Rolando Lillo RUT 216233905")
+
+
+
+
+while True:
+    print("Bienvenidos al programa de analisis de datos")
+    print("\t\tMENU")
+    print("Opcion 1 : Asignar sueldos aleatorios")
+    print("opcion 2 : Clasificar sueldos")
+    print("Opcion 3 : Ver estadisticas")
+    print("Opcion 4 : Reporte de sueldos")
+    print("Opcion 5 : Salir del programa")
+    opcion = int(input("Ingrese la opcion que desea: "))
+    match opcion:
+        case 1:
+            sueldos()
+        case 2: 
+            print()
+        case 3:
+            print()
+        case 4: 
+            print()
+        case 5: 
+            salir()
+            break
+        case _:
+            print("Intente una opcion nuevamente")
